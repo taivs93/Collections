@@ -3,8 +3,8 @@ package entity;
 import java.util.ArrayList;
 import java.util.List;
 public class Word {
-    private final List<String> meanings = new ArrayList<String>();
-    private final List<String> synonyms = new ArrayList<String>();
+    private List<String> meanings = new ArrayList<String>();
+    private List<String> synonyms = new ArrayList<String>();
     public List<String> getMeaning() {
         return meanings;
     }

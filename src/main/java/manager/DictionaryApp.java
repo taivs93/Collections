@@ -5,8 +5,8 @@ import entity.Word;
 import java.util.*;
 
 public class DictionaryApp {
-    private final Map<String, Word> dictionary = new HashMap<String, Word>();
-    private final List<String> lastFiveSearchWords = new LinkedList<String>();
+    private Map<String, Word> dictionary = new HashMap<String, Word>();
+    private List<String> lastFiveSearchWords = new LinkedList<String>();
     public void addWord(String word, String meaning){
         if(!dictionary.containsKey(word)){
             Word newWord = new Word();
@@ -19,7 +19,6 @@ public class DictionaryApp {
                 existedWord.addMeaning(meaning);
             }
         }
-        System.out.println("Synonyms: ");
         for(String wordInDic : dictionary.keySet()){
             if(!wordInDic.equals(word) && dictionary.get(wordInDic).getMeaning().contains(meaning)){
                 addSynonym(wordInDic,word);
@@ -67,6 +66,7 @@ public class DictionaryApp {
             this.suggestWord(word);
             return;
         }
+        System.out.println("Synonyms: ");
         dictionary.get(word).getSynonyms().forEach(System.out::println);
         addToLastFiveSearchWords(word);
     }

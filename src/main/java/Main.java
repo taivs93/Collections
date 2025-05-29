@@ -4,8 +4,8 @@ import manager.DictionaryApp;
 import java.util.Scanner;
 
 public class Main {
-    private static final DictionaryApp dictionaryApp = new DictionaryApp();
-    private static final Scanner scanner = new Scanner(System.in);
+    private static DictionaryApp dictionaryApp = new DictionaryApp();
+    private static Scanner scanner = new Scanner(System.in);
     public static void main(String[] args) {
         boolean isInUsed = true;
         int choice;
